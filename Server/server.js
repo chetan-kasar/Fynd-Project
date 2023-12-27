@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 const fs = require('fs');
-const uri = "mongodb+srv://kasarschetan1122:CUhAtAZZCzo4eg7g@cluster0.6xbessh.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://kasarschetan1122:HVqoqRg5GkExQVDr@cluster1.rjo2zv4.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 const multer  = require('multer')
 
