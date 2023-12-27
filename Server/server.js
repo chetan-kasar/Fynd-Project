@@ -41,6 +41,7 @@ app.post('/add', async (req, res) => {
     req.body.userData.titleData.titleImage = global.titleImageBuff;
     req.body.userData.albumData.photos = albumImagesBuff;
     const result = await mycollection.insertOne(req.body.userData);
+    res.json({message:"Added"});
 
 });
 
@@ -92,7 +93,7 @@ app.post('/album', upload.array("photoAlbum", 30),(req, res, next) => {
     const doc = req.files.map(e=>(e.buffer));
     const doc1 = doc.map(e=>({e}));
     global.albumImagesBuff = doc1;
-    res.send("Photos Received");
+    res.json({message:"Abum Received"});
 });
 
 
