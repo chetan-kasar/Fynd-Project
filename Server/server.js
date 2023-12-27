@@ -4,12 +4,20 @@ const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 const fs = require('fs');
-const uri = "mongodb://localhost:27017";
+const uri = "mongodb+srv://kasarschetan1122:CUhAtAZZCzo4eg7g@cluster0.6xbessh.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 const multer  = require('multer')
 
 const cors = require('cors');
 const app = express();
+app.use(cors());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 //mongoose.connect('mongodb://localhost:27017/imageDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
