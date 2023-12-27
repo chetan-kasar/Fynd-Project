@@ -88,7 +88,7 @@ app.post('/upload', upload.single("titleImage"), async (req, res) => {
 
 });
 
-app.post('/album', upload.array("photoAlbum", 30), async (req, res, next) => {
+app.post('/album', upload.array("photoAlbum", 30),(req, res, next) => {
     const doc = req.files.map(e=>(e.buffer));
     const doc1 = doc.map(e=>({e}));
     global.albumImagesBuff = doc1;
