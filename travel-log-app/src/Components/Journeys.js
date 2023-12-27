@@ -14,7 +14,7 @@ const Journeys = (props) => {
     const[userData, setUserData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/get")
+        axios.get("https://fynd-project-backend.vercel.app/get")
           .then(response => {
             setUserData(response.data);
           })
